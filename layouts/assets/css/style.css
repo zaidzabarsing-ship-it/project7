@@ -1,0 +1,117 @@
+body {
+    overflow-x: hidden;
+}
+
+#wrapper {
+    min-height: 100vh;
+}
+
+#sidebar-wrapper {
+    width: 15rem;
+    min-height: 100vh;
+    margin-left: -15rem;
+    flex-shrink: 0;
+    background-color: #f0f2f5;
+    border-right: 1px solid #d9dee5;
+    transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 1.25rem;
+}
+
+#sidebar-wrapper .brand {
+    width: 80px;
+    height: auto;
+}
+
+#sidebar-wrapper .list-group {
+    width: 15rem;
+}
+
+#page-content-wrapper {
+    display: flex;
+    min-width: 0;
+    min-height: 100vh;
+    width: 100%;
+    flex-direction: column;
+}
+
+#page-content-wrapper main {
+    flex: 1;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+.list-group-item-action {
+    color: #202124;
+    background-color: transparent;
+    border: 0;
+    border-left: 3px solid transparent;
+    transition: 0.2s;
+}
+
+.list-group-item-action:hover,
+.list-group-item-action:focus,
+.list-group-item-action.active {
+    color: #124f9c;
+    background-color: #dfe7f2;
+    border-left-color: #1a6ed8;
+    transform: translateX(2px);
+}
+
+.guest-page {
+    min-height: 100vh;
+}
+
+.guest-page main {
+    min-height: calc(100vh - 132px);
+}
+
+.guest-logo {
+    width: 42px;
+    height: auto;
+}
+
+.login-card {
+    max-width: 430px;
+    margin: 2rem auto 0;
+}
+
+.sidebar-overlay {
+    display: none;
+}
+
+@media (max-width: 767.98px) {
+    #sidebar-wrapper {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1040;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.35);
+    }
+
+    #wrapper.toggled .sidebar-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 1030;
+        background-color: rgba(0, 0, 0, 0.35);
+    }
+}
+
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+}

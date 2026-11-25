@@ -1,0 +1,19 @@
+{
+    "name": "suendri/project7",
+    "description": "Project 7 Sistem Akademik Pemrograman Berbasis Web",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Suendri",
+            "email": "mr.suendri@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {
+        "filp/whoops": "^2.14"
+    }
+}
